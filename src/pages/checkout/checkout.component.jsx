@@ -11,7 +11,7 @@ const CheckoutPage =({ cartItems, total })=> (
     <div className='checkout-page'>
         <div className='checkout-header'>
             {['Product', 'Description', 'Quantity', 'Price', 'Remove'].map(heading => 
-            <div class='header-block'>
+            <div key={heading} className='header-block'>
                 <span>{heading}</span>
             </div>
             )}
