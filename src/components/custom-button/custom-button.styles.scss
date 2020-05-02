@@ -19,11 +19,25 @@ $google-second: #fff;
   font-family: 'Open Sans';
   border: 1px solid transparent;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
 
   &:hover {
     background-color: $button-second;
     color: $button-main;
     border: 1px solid $button-main;
+  }
+
+  &.inverted {
+    background-color: $button-second;
+    color: $button-main;
+    border-color: $button-main;
+
+    &:hover {
+      background-color: $button-main;
+      color: $button-second;
+      border: $button-second;
+    }
   }
 
   &.google-sign-in {
