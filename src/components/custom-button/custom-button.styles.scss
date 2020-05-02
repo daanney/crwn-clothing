@@ -1,32 +1,39 @@
+$button-main: #000;
+$button-second: #fff;
+
+$google-main: #4285f4;
+$google-second: #fff;
+
 .custom-button {
   min-width: 165px;
   width: auto;
   height: 50px;
   letter-spacing: 0.5px;
   line-height: 50px;
-  padding: 0 35px 0 35px;
-  font-size: 15px;
-  background-color: black;
-  color: white;
+  padding: 0 20px;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: $button-main;
+  color: $button-second;
   text-transform: uppercase;
   font-family: 'Open Sans';
-  font-weight: bolder;
   border: 1px solid transparent;
   cursor: pointer;
 
   &:hover {
-    background-color: white;
-    color: black;
-    border: 1px solid black;
+    background-color: $button-second;
+    color: $button-main;
+    border: 1px solid $button-main;
   }
 
   &.google-sign-in {
-    background-color: #4285f4;
-    color: #fff;
+    background-color: $google-main;
+    color: $google-second;
 
     &:hover {
-      background-color: #357ae8;
-      border: 1px solid transparent;
+      background-color: $google-second;
+      color: $google-main;
+      border-color: $google-main;
     }
   }
 }
