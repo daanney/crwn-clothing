@@ -5,20 +5,20 @@ import { addItem } from '../../redux/cart/cart.actions'
 
 import CustomButton from '../custom-button/custom-button.component'
 
-import './collection-item.styles.scss'
+import { CollectionItemContainer, CollectionItemImage, CollectionItemFooter, CollectionItemName, CollectionItemPrice } from './collection-item.styles.jsx'
 
 const CollectionItem =({item, addItem})=> {
 	const { name, price, imageUrl } = item
 
 	return (
-	<div className='collection-item'>
-		<div className='item-image' style={{backgroundImage: `url(${imageUrl})`}}></div>
-		<div className='item-footer'>
-			<span className='name'>{name}</span>
-			<span className='price'>{price}</span>
-		</div>
+	<CollectionItemContainer>
+		<CollectionItemImage className='item-image' style={{backgroundImage: `url(${imageUrl})`}}></CollectionItemImage>
+		<CollectionItemFooter>
+			<CollectionItemName>{name}</CollectionItemName>
+			<CollectionItemPrice>{price}</CollectionItemPrice>
+		</CollectionItemFooter>
 		<CustomButton inverted onClick={() => addItem(item)}>Add to cart</CustomButton>
-	</div>
+	</CollectionItemContainer>
 	)
 }
 
