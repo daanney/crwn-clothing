@@ -9,11 +9,11 @@ import './directory.styles.scss'
 import MenuItem  from '../menu-item/menu-item.component'
 
 const Directory =({sections})=> (
-    <div className='directory-menu'>
-        {sections.map(({id, ...sectionProps}) => (
-            <MenuItem key={id} {...sectionProps} />
-        ))}
-    </div>
+	<div className='directory-menu'>
+		{sections.map(({id, ...sectionProps}) => (
+			<MenuItem key={id} {...sectionProps} />
+		))}
+	</div>
 )
 
 const mapStateToProps = createStructuredSelector({

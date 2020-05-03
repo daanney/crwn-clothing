@@ -6,7 +6,7 @@ import rootReducer from "./root.reducer"
 
 const middelewares = []
 if(process.env.NODE_ENV === 'development') {
-    middelewares.push(logger)
+	middelewares.push(logger)
 }
 
 export const store = createStore(rootReducer, applyMiddleware(...middelewares))
