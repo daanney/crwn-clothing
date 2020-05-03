@@ -11,7 +11,6 @@ import CartIcon from '../cart-icon/cart-icon.component'
 import CartDropdown from '../cart-dropdown/cart-dropdown.component'
 
 import { ReactComponent as Logo } from '../../assets/crown.svg'
-import './header.styles.scss'
 import { HeaderContainer, LogoContainer, OptionsContainer, OptionLink, OptionUserLink } from './header.styles'
 
 
