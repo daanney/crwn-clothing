@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './App.css'
 
 import { Switch, Route, Redirect } from 'react-router-dom'
@@ -14,29 +14,21 @@ import ShopPage from './pages/shop/shop.component'
 import SignInAndUpPage from './pages/sign-in-and-up/sign-in-and-up.component'
 import CheckoutPage from './pages/checkout/checkout.component'
 
-class App extends React.Component {
+const App =({ checkUserSession, currentUser })=> {
 
-	componentDidMount() {
-		const { checkUserSession } = this.props
-		checkUserSession()
-	}
+	useEffect(() => { checkUserSession() }, [checkUserSession])
 
-	componentWillUnmount() {
-	}
-
-	render() {
-		return (
-			<div>
-				<Header />
-				<Switch>
-					<Route exact path='/' component={HomePage} />
-					<Route path='/shop' component={ShopPage} />
-					<Route exact path='/checkout' component={CheckoutPage} />
-					<Route path='/signin' render={() => this.props.currentUser ? (<Redirect to='/' />) : (<SignInAndUpPage />)} />
-				</Switch>
-			</div>
-		)
-	}
+	return (
+		<div>
+			<Header />
+			<Switch>
+				<Route exact path='/' component={HomePage} />
+				<Route path='/shop' component={ShopPage} />
+				<Route exact path='/checkout' component={CheckoutPage} />
+				<Route path='/signin' render={() => currentUser ? (<Redirect to='/' />) : (<SignInAndUpPage />)} />
+			</Switch>
+		</div>
+	)
 }
 
 const mapStateToProps = createStructuredSelector({
