@@ -8,6 +8,10 @@ export const CheckoutItemContainer = styled.div`
 	padding: 15px 0;
 	font-size: 20px;
 	align-items: center;
+
+	@media screen and (max-width: 800px) {
+		font-size: smaller;
+	}
 `
 
 const itemColumnStyles = css`
@@ -35,6 +39,12 @@ export const ItemImageContainer = styled.div`
 		top: 0;
 		bottom: 0;
 	}
+
+	@media screen and (max-width: 800px) {
+		.image-wrap {
+			height: 100px;
+		}
+	}
 `
 
 export const ItemName = styled.span`
@@ -48,10 +58,18 @@ export const ItemQuantityContainer = styled.span`
 
 export const ItemQuantityArrow = styled.span`
 	cursor: pointer;
+
+	@media screen and (max-width: 800px) {
+		font-size: 16px;
+	}
 `
 
 export const ItemQuantity = styled.span`
 	margin: 0 10px;
+
+	@media screen and (max-width: 800px) {
+		font-size: 16px;
+	}
 `
 
 export const ItemPrice = styled.span`
