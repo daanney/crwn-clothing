@@ -1,11 +1,14 @@
 import React from 'react'
 
 import CollectionItem from '../collection-item/collection-item.component'
-import { CollectionPreviewContainer, CollectionPreviewTitle, CollectionPreviews } from './collection-preview.styles.jsx'
+import { CollectionPreviewContainer, CollectionPreviewTitle, CollectionPreviews, CollectionLink } from './collection-preview.styles.jsx'
 
 const CollectionPreview =({ title, items, routeName, itemCount = 4 })=> (
 	<CollectionPreviewContainer>
-		<CollectionPreviewTitle to={`/shop/${routeName}`}>{title}</CollectionPreviewTitle>
+		<CollectionPreviewTitle>
+			{title}
+			<CollectionLink to={`/shop/${routeName}`}>&#8677;</CollectionLink>
+		</CollectionPreviewTitle>
 		<CollectionPreviews>
 			{items.filter((item, i) => i<itemCount).map((item) => (
 				<CollectionItem key={item.id} item={item} />

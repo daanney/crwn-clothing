@@ -11,7 +11,7 @@ import CollectionPreview from '../collection-preview/collection-preview.componen
 const CollectionsOverview =({ collections })=> (
 	<CollectionsOverviewContainer>
 		{collections.map(({id, ...collectionProps}) => (
-			<CollectionPreview key={id} {...collectionProps} />
+			<CollectionPreview key={id} {...collectionProps} itemCount='5' />
 		))}
 	</CollectionsOverviewContainer>
 )
