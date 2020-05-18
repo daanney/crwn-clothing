@@ -57,4 +57,10 @@ export const FormInputLabel = styled.label`
 	${FormInputContainer} input:focus ~ & {
 		${shrinkLabelStyles}
 	}
+
+	& span {
+		display: inline-block;
+		padding-left: 2px;
+		color: red;
+	}
 `

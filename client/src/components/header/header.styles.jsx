@@ -48,12 +48,14 @@ export const OptionLink = styled(Link)`
 	text-transform: uppercase;
 	cursor: pointer;
 	background: #fff;
+	border: 1px solid #000;
 	color: #000;
 	border-radius: 5px;
 	white-space: nowrap;
 
 	&:hover {
-		background: #eee;
+		background: #000;
+		color: #fff;
 	}
 
 	&.sign-out {
@@ -72,7 +74,6 @@ export const OptionLink = styled(Link)`
 	@media screen and (max-width: 460px) {
 		font-size: 10px;
 		padding: 10px 5px;
-		background: #eee;
 		margin: 0 2px;
 	}
 `
