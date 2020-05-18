@@ -1,10 +1,12 @@
 import React from 'react'
 
-import { CartItemContainer, CartItemImage, ItemDetailsContainer, ItemName, ItemPrice } from './cart-item.styles.jsx'
+import { CartItemContainer, CartItemImage, ItemDetailsContainer, ItemName, ItemPrice, CartImageWrapper } from './cart-item.styles.jsx'
 
 const CartItem =({item: {imageUrl, price, name, quantity}})=> (
 	<CartItemContainer>
-		<CartItemImage src={imageUrl} alt='item' />
+		<CartImageWrapper>
+			<CartItemImage src={imageUrl} alt='item' />
+		</CartImageWrapper>
 		<ItemDetailsContainer>
 			<ItemName>{name}</ItemName>
 			<ItemPrice>{quantity}x ${price}</ItemPrice>

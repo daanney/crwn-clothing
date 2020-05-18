@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const CartDropdownContainer = styled.div`
 	position: absolute;
-	width: 240px;
+	width: 400px;
 	height: 340px;
 	display: flex;
 	flex-direction: column;
@@ -13,16 +13,16 @@ export const CartDropdownContainer = styled.div`
 	right: 40px;
 	z-index: 5;
 
-	& button {
+	& .custom-button {
 		margin-top: auto;
 	}
 
 	@media screen and (max-width: 800px) {
 		position: fixed;
-		width: 90vw;
-		height: 89vh;
+		width: 98vw;
+		height: 80vh;
 		top: 10vh;
-		right: 5vw;
+		right: 1vw;
 	}
 `
 
@@ -38,6 +38,6 @@ export const CartItemsContainer = styled.div`
 	overflow: scroll;
 
 	@media screen and (max-width: 800px) {
-		height: 89vh;
+		height: 80vh;
 	}
 `
