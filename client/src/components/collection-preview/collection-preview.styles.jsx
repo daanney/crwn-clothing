@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export const CollectionPreviewContainer = styled.div`
 	display: flex;
@@ -10,7 +11,7 @@ export const CollectionPreviewContainer = styled.div`
 	}
 `
 
-export const CollectionPreviewTitle = styled.h1`
+export const CollectionPreviewTitle = styled(Link)`
 	font-size: 28px;
 	margin-bottom: 25px;
 `
