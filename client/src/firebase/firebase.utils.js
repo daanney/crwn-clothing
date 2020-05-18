@@ -29,6 +29,8 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 				email,
 				photoURL,
 				createdAt,
+				shippingAddress: null,
+				addresses: [],
 				...additionalData
 			})
 		}catch(error) {
@@ -37,6 +39,22 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 	}
 
 	return userRef
+}
+
+export const updateUserProfileDocument = async (user) => {
+	if(!user) return false
+
+	const userRef = firestore.doc(`users/${user.id}`)
+	const snapshot = await userRef.get()
+	if(!snapshot.exists) return false
+
+	try {
+		await userRef.update(user)
+	}catch(error) {
+		console.log('error updating user', error.message)
+	}
+
+	return true
 }
 
 export const addCollectionWithDocs =async(collectionKey, items)=> {
@@ -60,8 +78,8 @@ export const mapCollectionSnapshot =(collections)=> {
 
 export const getCurrentUser =()=> {
 	return new Promise((resolve, reject) => {
-		const unsibscribe = auth.onAuthStateChanged(userAuth => {
-			unsibscribe()
+		const unsubscribe = auth.onAuthStateChanged(userAuth => {
+			unsubscribe()
 			resolve(userAuth)
 		}, reject)
 	})

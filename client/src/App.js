@@ -16,6 +16,8 @@ const HomePage = lazy(() => import('./pages/homepage/homepage.component'))
 const ShopPage = lazy(() => import('./pages/shop/shop.component'))
 const SignInAndUpPage = lazy(() => import('./pages/sign-in-and-up/sign-in-and-up.component'))
 const CheckoutPage = lazy(() => import('./pages/checkout/checkout.component'))
+const ProfilePage = lazy(() => import('./pages/profile/profile.component'))
+const ContactPage = lazy(() => import('./pages/contact/contact.component'))
 
 const App =({ checkUserSession, currentUser })=> {
 
@@ -29,8 +31,10 @@ const App =({ checkUserSession, currentUser })=> {
 				<ErrorBoundary>
 					<Suspense fallback={<Spinner />}>
 						<Route exact path='/' component={HomePage} />
-						<Route path='/shop' component={ShopPage} />
+						<Route exact path='/profile' component={ProfilePage} />
+						<Route exact path='/contact' component={ContactPage} />
 						<Route exact path='/checkout' component={CheckoutPage} />
+						<Route path='/shop' component={ShopPage} />
 						<Route path='/signin' render={() => currentUser ? (<Redirect to='/' />) : (<SignInAndUpPage />)} />
 					</Suspense>
 				</ErrorBoundary>

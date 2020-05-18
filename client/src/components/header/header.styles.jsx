@@ -40,19 +40,23 @@ export const OptionsContainer = styled.div`
 
 export const OptionLink = styled(Link)`
 	padding: 10px 15px;
+	font-size: 14px;
 	text-transform: uppercase;
 	cursor: pointer;
-`
+	background: #fff;
+	color: #000;
+	border-radius: 5px;
 
-export const OptionUserLink = styled.div`
-	background-position: center;
-	background-size: cover;
-	width: 40px;
-	height: 40px;
-	border-radius: 25px;
+	&:hover {
+		background: #eee;
+	}
 
-	@media screen and (max-width: 800px) {
-		width: 30px;
-		height: 20px;
+	&.sign-out {
+		background: #000;
+		color: #fff;
+
+		&:hover {
+			background: #444;
+		}
 	}
 `
