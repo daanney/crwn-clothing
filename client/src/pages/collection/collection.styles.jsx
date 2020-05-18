@@ -3,10 +3,6 @@ import styled from 'styled-components'
 export const CollectionPageContainer = styled.div`
   display: flex;
   flex-direction: column;
-
-  @media screen and (max-width: 800px) {
-    align-items: center;
-  }
 `
 
 export const CollectionPageTitle = styled.h2`
@@ -16,14 +12,6 @@ export const CollectionPageTitle = styled.h2`
 
 export const CollectionPageItems = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 10px;
-
-  & >div {
-    margin-bottom: 30px;
-  }
-	@media screen and (max-width: 800px) {
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 15px;
-  }
 `

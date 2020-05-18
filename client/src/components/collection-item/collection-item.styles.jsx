@@ -1,12 +1,13 @@
 import styled from 'styled-components'
 
 export const CollectionItemContainer = styled.div`
-	width: 22vw;
+	width: 100%;
+	height: 350px;
 	display: flex;
 	flex-direction: column;
-	height: 350px;
 	align-items: center;
 	position: relative;
+	margin-bottom: 30px;
 
 	.custom-button {
 		width: 50%;
@@ -36,7 +37,6 @@ export const CollectionItemContainer = styled.div`
 	}
 
 	@media screen and (max-width: 800px) {
-		width: 40vw;
 
 		&:hover {
 			.item-image {
